@@ -1,0 +1,65 @@
+
+# 🌍 Cisco BGP Protocol Configuration Guide
+
+This README outlines a basic setup for BGP (Border Gateway Protocol) used in inter-domain routing.
+
+---
+
+## 🛠️ Basic Router Setup
+
+```bash
+enable
+configure terminal
+hostname ROUTER_NAME
+no ip domain-lookup
+```
+
+---
+
+## 🌐 Interface IP Configuration
+
+```bash
+interface FastEthernet0/0
+  ip address 192.168.1.1 255.255.255.0
+  no shutdown
+exit
+```
+
+---
+
+## 🔁 BGP Configuration
+
+```bash
+router bgp 65001
+  neighbor 192.168.1.2 remote-as 65002
+  network 10.0.0.0 mask 255.255.255.0
+exit
+```
+
+---
+
+## 🔍 Verification Commands
+
+```bash
+show ip bgp summary
+show ip bgp
+show running-config
+```
+
+---
+
+## 💾 Save Configuration
+
+```bash
+copy running-config startup-config
+```
+
+---
+
+## 🧠 Notes
+
+- BGP is a path-vector protocol and used between ISPs and large enterprises.
+- Use public AS numbers or private ranges (64512–65535 for testing).
+- Requires manual peer configuration.
+
+---
