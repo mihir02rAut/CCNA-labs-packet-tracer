@@ -1,4 +1,4 @@
-**# Cisco Router's basic Commands**
+# Cisco Router's basic Commands
 
 A router is a device that worked on Network layer (layer 3) OSI model and used to forward packets from one network to another. The router determines the optimal outgoing intrface by matching the destination IP address against its routing table entries and then forwards the packet accordingly.
 
@@ -39,7 +39,7 @@ no shutdown
 exit
 - Exits interface configuration mode.
 
-4. Routing Configuration
+## 4. Routing Configuration
 Static Route
 ip route 192.168.2.0 255.255.255.0 10.0.0.2
 - Manually adds a route via the specified next-hop IP.
@@ -51,7 +51,7 @@ router ospf 1
 network 192.168.1.0 0.0.0.255 area 0
 - Includes the specified network in OSPF area 0.
 
-5. Password and Access Control
+## 5. Password and Access Control
 line console 0
  password YourPassword
  login
@@ -62,7 +62,7 @@ line vty 0 4
  login
 - Sets passwords for virtual terminal lines for remote access.
 
-**6. Save Configuration**
+## 6. Save Configuration
 write memory
 - Saves running configuration to non-volatile memory.
 
