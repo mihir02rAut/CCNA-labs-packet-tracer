@@ -1,0 +1,72 @@
+
+# 🔷 Cisco EIGRP Protocol Configuration Guide
+
+This README outlines a basic setup for EIGRP (Enhanced Interior Gateway Routing Protocol).
+
+---
+
+## 🛠️ Basic Router Setup
+
+```bash
+enable
+configure terminal
+hostname ROUTER_NAME
+no ip domain-lookup
+```
+
+---
+
+## 🌐 Interface IP Configuration
+
+```bash
+interface FastEthernet0/0
+  ip address 192.168.1.1 255.255.255.0
+  no shutdown
+exit
+
+interface FastEthernet0/1
+  ip address 10.0.0.1 255.255.255.0
+  no shutdown
+exit
+```
+
+---
+
+## 🔁 EIGRP Configuration
+
+```bash
+router eigrp 100
+  network 192.168.1.0
+  network 10.0.0.0
+  no auto-summary
+exit
+```
+
+---
+
+## 🔍 Verification Commands
+
+```bash
+show ip protocols
+show ip eigrp neighbors
+show ip route eigrp
+show running-config
+```
+
+---
+
+## 💾 Save Configuration
+
+```bash
+copy running-config startup-config
+```
+
+---
+
+## 🧠 Notes
+
+- EIGRP is a hybrid protocol (distance-vector with some link-state features).
+- Uses DUAL algorithm for route selection.
+- Use `no auto-summary` to avoid classful routing behavior.
+
+---
