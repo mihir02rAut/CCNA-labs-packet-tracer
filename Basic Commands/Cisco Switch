@@ -1,0 +1,100 @@
+# 🛠️ Cisco Switch Basic Commands
+
+A quick reference guide for configuring Cisco switches — ideal for beginners, labs, or interviews.
+
+---
+
+## ⚙️ Basic Setup
+
+```bash
+enable                          # Enter privileged EXEC mode
+configure terminal              # Enter global configuration mode
+hostname SWITCH_NAME            # Set hostname
+no ip domain-lookup             # Disable DNS lookup (to avoid typos causing delays)
+```
+
+---
+
+## 🔐 Set Passwords
+
+```bash
+enable secret YOUR_PASSWORD     # Set encrypted enable password
+
+line console 0
+  password YOUR_PASSWORD        # Console access password
+  login
+exit
+
+line vty 0 4
+  password YOUR_PASSWORD        # Telnet/SSH access password
+  login
+exit
+```
+
+---
+
+## 🌐 Interface Configuration
+
+```bash
+interface FastEthernet0/1
+  description Connected to PC1
+  switchport mode access
+  switchport access vlan 10
+  no shutdown
+exit
+```
+
+---
+
+## 📦 VLAN Configuration
+
+```bash
+vlan 10
+  name Sales
+exit
+
+interface range fa0/1 - 10
+  switchport mode access
+  switchport access vlan 10
+exit
+```
+
+---
+
+## 🔁 Trunk Port Setup
+
+```bash
+interface fa0/24
+  switchport trunk encapsulation dot1q
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20
+exit
+```
+
+---
+
+## 💾 Save Configuration
+
+```bash
+copy running-config startup-config
+```
+
+---
+
+## 🔍 Useful Show Commands
+
+```bash
+show vlan brief                 # Show all VLANs
+show running-config            # Show current config
+show mac address-table         # Display MAC address table
+show interfaces status         # Show interface status and VLANs
+show ip interface brief        # Quick IP/interface overview
+```
+
+---
+
+## 🧠 Pro Tip
+
+Use `?` in CLI to see available commands or syntax help at any level.
+
+---
