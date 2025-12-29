@@ -1,4 +1,4 @@
-# 🧠 CCNA Packet Tracer Labs & Mini Projects
+# 🧠 CCNA Packet Tracer Labs 
 
 Welcome to my personal repository of hands-on **Cisco Packet Tracer labs** created while studing for the **CCNA (Cisco Certified Network Associate)** and working on a complate enterprise-grade network project.
 
